@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#eaf8f2" />
+  <meta name="description" content="AquaFind helps the LPU campus community discover drinking-water refill points and report facility issues." />
+  <title>AquaFind | Find Water. Refill Better.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="announcement">
+    <span class="announcement-dot"></span>
+    A student-led concept for a more refill-friendly campus
+    <span class="announcement-tag">P16 · INT335</span>
+  </div>
+
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="AquaFind home">
+      <span class="brand-mark"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 3C15 11 8 18 8 25a12 12 0 0 0 24 0C32 18 25 11 20 3Z" fill="currentColor"/><path d="M14 26c.5 3.5 3 5.5 6 6" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+      <span class="brand-name">aqua<span>find</span><small>SMART CAMPUS WATER</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+    <nav class="main-nav" id="mainNav">
+      <a href="#find">Find water</a>
+      <a href="#map">Campus map</a>
+      <a href="#impact">Our impact</a>
+      <a href="#about">About</a>
+      <button class="nav-report" data-open-report>Report an issue <span>↗</span></button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section-wrap" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="eyebrow-icon">✳</span> REFILL MORE. WASTE LESS.</div>
+        <h1>Good water.<br><em>Right around</em><br>the corner.</h1>
+        <p class="hero-text">Find drinking-water refill points around campus, check their reported status and help keep shared facilities reliable.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#find">Find a water point <span>→</span></a>
+          <button class="button button-soft" data-open-report>Report a problem <span>＋</span></button>
+        </div>
+        <div class="hero-note"><span class="tiny-check">✓</span> Bring your bottle. Make every refill count.</div>
+      </div>
+      <div class="hero-art" aria-label="Illustration of a reusable bottle and water drop">
+        <div class="sun-orb"></div><div class="leaf leaf-one">✦</div><div class="leaf leaf-two">✦</div>
+        <div class="art-card art-card-top"><span class="art-pulse"></span><div><b>Refill-friendly</b><small>Small actions, cleaner campus</small></div></div>
+        <div class="bottle">
+          <div class="bottle-cap"></div><div class="bottle-neck"></div><div class="bottle-body"><div class="bottle-water"></div><span class="bottle-logo">refill<br><b>repeat</b></span><span class="bottle-leaf">✿</span></div>
+        </div>
+        <div class="water-drop">✦</div>
+        <div class="art-card art-card-bottom"><span class="mini-drop">◆</span><div><b>One bottle at a time</b><small>Choose reusables when possible</small></div></div>
+        <div class="art-caption">A LITTLE LESS SINGLE-USE</div>
+      </div>
+    </section>
+
+    <section class="quick-search section-wrap" id="find">
+      <div class="search-heading">
+        <div><span class="section-kicker">YOUR NEXT REFILL</span><h2>Find water near you</h2></div>
+        <span class="demo-label"><i></i> Sample campus data</span>
+      </div>
+      <div class="search-panel">
+        <label class="search-box"><span class="search-icon">⌕</span><input id="searchInput" type="search" placeholder="Search by block, building or location..." autocomplete="off"><kbd>⌘ K</kbd></label>
+        <label class="filter-box"><span>STATUS</span><select id="statusFilter"><option value="all">All statuses</option><option value="working">Working</option><option value="maintenance">Under maintenance</option><option value="issue">Needs checking</option></select></label>
+        <button class="search-button" id="searchButton">Search <span>→</span></button>
+      </div>
+      <div class="results-meta"><span id="resultCount">Showing sample water points</span><button id="clearFilters" class="text-button">Clear filters</button></div>
+      <div class="water-grid" id="waterGrid" aria-live="polite"></div>
+      <p class="data-note"><strong>Note:</strong> Locations and statuses shown are illustrative demo entries, not verified live LPU facility data. Please confirm each point on-site before relying on it.</p>
+    </section>
+
+    <section class="map-section" id="map">
+      <div class="section-wrap map-layout">
+        <div class="map-copy">
+          <span class="section-kicker">CAMPUS, MADE EASIER</span>
+          <h2>Water should be<br><em>easy to find.</em></h2>
+          <p>Explore a simple location overview and choose a point to see its details. The map below is a schematic campus guide for the project demo, not a surveyed geographic map.</p>
+          <div class="map-legend"><span><i class="legend-dot working"></i> Working (sample)</span><span><i class="legend-dot maintenance"></i> Maintenance</span><span><i class="legend-dot issue"></i> Needs checking</span></div>
+          <a href="#find" class="inline-link">Browse all water points <span>→</span></a>
+        </div>
+        <div class="campus-map" role="img" aria-label="Schematic map with sample water point markers">
+          <div class="map-topline"><span>✳ CAMPUS REFILL GUIDE</span><span>SCHEMATIC VIEW</span></div>
+          <div class="map-path path-a"></div><div class="map-path path-b"></div><div class="map-path path-c"></div>
+          <div class="map-green green-a"></div><div class="map-green green-b"></div><div class="map-green green-c"></div>
+          <div class="map-building building-a"><b>ACADEMIC ZONE</b><small>Teaching blocks</small></div>
+          <div class="map-building building-b"><b>LIBRARY</b><small>Learning spaces</small></div>
+          <div class="map-building building-c"><b>SPORTS AREA</b><small>Activity zone</small></div>
+          <div class="map-building building-d"><b>STUDENT HUB</b><small>Common facilities</small></div>
+          <button class="map-pin pin-a" data-point="1" aria-label="Sample water point at Academic Zone"><span>1</span></button>
+          <button class="map-pin pin-b" data-point="2" aria-label="Sample water point at Library"><span>2</span></button>
+          <button class="map-pin pin-c" data-point="3" aria-label="Sample water point at Sports Area"><span>3</span></button>
+          <button class="map-pin pin-d" data-point="4" aria-label="Sample water point at Student Hub"><span>4</span></button>
+          <div class="map-tooltip" id="mapTooltip">Select a numbered marker to preview a sample location.</div>
+          <div class="map-scale">NOT TO SCALE</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="impact-section section-wrap" id="impact">
+      <div class="impact-intro"><span class="section-kicker">WHY REFILLING MATTERS</span><h2>Better habits.<br><em>Lighter footprint.</em></h2><p>Reliable refill access can make reusable bottles a more convenient choice and help reduce dependence on single-use packaged water.</p></div>
+      <div class="impact-cards">
+        <article class="impact-card"><span class="impact-icon green-icon">♻</span><strong>Reuse</strong><p>Make carrying and refilling a reusable bottle part of the everyday routine.</p></article>
+        <article class="impact-card"><span class="impact-icon blue-icon">⌖</span><strong>Find</strong><p>Make water points easier to discover between classes and campus activities.</p></article>
+        <article class="impact-card"><span class="impact-icon yellow-icon">♡</span><strong>Care</strong><p>Share facility issues so the right people can review and address them.</p></article>
+      </div>
+    </section>
+
+    <section class="report-banner section-wrap">
+      <div class="report-symbol">✳</div><div><span class="section-kicker">SPOTTED A PROBLEM?</span><h2>Help keep the next refill ready.</h2><p>Tell us when a water point needs attention. Your report is saved in this demo on your device.</p></div>
+      <button class="button button-white" data-open-report>Report a water issue <span>→</span></button>
+    </section>
+
+    <section class="about-section section-wrap" id="about">
+      <div><span class="section-kicker">ABOUT AQUAFIND</span><h2>Designed around<br><em>everyday campus needs.</em></h2></div>
+      <div class="about-copy"><p>AquaFind is a student project concept developed for INT335 Design Thinking, project P16: <strong>The Empty Bottle Problem</strong>. It explores how students can find drinking-water points more easily and how facility issues can become more visible.</p><p>The concept is intended to be refined through real campus observations, interviews and user testing. It does not certify water quality or replace official campus maintenance channels.</p><div class="project-stamp">LOVELY PROFESSIONAL UNIVERSITY <span>·</span> INT335 <span>·</span> P16</div></div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><a class="footer-brand" href="#home">aqua<span>find</span></a><span>Find water. Refill better.</span><span>Student concept · INT335 P16</span></footer>
+
+  <div class="modal-backdrop" id="reportModal" aria-hidden="true">
+    <section class="report-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="closeModal" aria-label="Close report form">×</button>
+      <span class="section-kicker">CAMPUS CARE STARTS HERE</span><h2 id="modalTitle">Report a water point issue</h2>
+      <p class="modal-intro">Share what you noticed. This demo stores the report locally in your browser; it does not send it to LPU maintenance.</p>
+      <form id="issueForm">
+        <label>Water point location<input name="location" required placeholder="e.g. Near Block / building name"></label>
+        <label>What is the issue?<select name="issue" required><option value="">Choose an issue</option><option>Cooler not working</option><option>No water available</option><option>Area needs cleaning</option><option>Water is not cold</option><option>Other / needs checking</option></select></label>
+        <label>Additional details<textarea name="details" rows="3" placeholder="Add details that could help identify the issue..."></textarea></label>
+        <button class="button button-primary form-submit" type="submit">Save demo report <span>→</span></button>
+        <p class="form-feedback" id="formFeedback" role="status"></p>
+      </form>
+    </section>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
